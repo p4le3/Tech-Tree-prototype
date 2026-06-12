@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <script src="./src/main.js" type="module"></script>
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" style="display: none;">
+
+    <symbol id="cross" viewBox="0 0 16 16">
+      <path
+        d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+    </symbol>
+
+    <symbol id="info" viewBox="0 0 16 16">
+      <path
+        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+      <path
+        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+    </symbol>
+  </svg>
+
+  <div class="tech-tree">
+    <div class="tree">
+      <div class="level">
+        <h2 class="row-level">0</h2>
+
+        <button class="tech" data-tech-id="1" data-action="open">
+          <span class="name">Огонь</span>
+          <span class="cost">50</span>
+
+          <svg class="prev"></svg>
+          <svg class="next"></svg>
+        </button>
+        <button class="tech" data-tech-id="2" data-action="open">
+          <span class="name">Глиняная лепка</span>
+          <span class="cost">50</span>
+
+          <svg class="prev"></svg>
+          <svg class="next"></svg>
+        </button>
+      </div>
+      <div class="level">
+        <h2 class="row-level">1</h2>
+
+        <button class="tech" data-tech-id="3" data-action="open">
+          <span class="name">Плавильная печь</span>
+          <span class="cost">200</span>
+
+          <svg class="prev"></svg>
+          <svg class="next"></svg>
+        </button>
+      </div>
+      <div class="level">
+        <h2 class="row-level">2</h2>
+
+        <button class="tech" data-tech-id="4" data-action="open">
+          <span class="name">Сталь</span>
+          <span class="cost">100</span>
+
+          <svg class="prev"></svg>
+          <svg class="next"></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="shading"></div>
+
+    <div class="modal-tech ">
+      <div class="tech-title">
+        <h3>Огонь</h3>
+        <button class="close-modal" data-action="close">
+          <svg>
+            <use href="#cross"></use>
+          </svg>
+        </button>
+      </div>
+      <!-- <div class="tech-info"> -->
+      <p class="description">
+        Огонь, простая и хорошая технология. Не смотрите на него снисходительно, ведь всё с него и началось.
+      </p>
+      <div class="related-techs">
+        <div class="related-title">
+          <div class="has-tooltip">
+            <h4>Связанные технологии</h4>
+            <svg>
+              <use href="#info"></use>
+            </svg>
+            <span class="tooltip">
+              Вложенность связей 1
+            </span>
+          </div>
+          <button data-action="showRelatedTree" style="display: none;">Показать древо связей</button>
+        </div>
+
+        <div class="lists">
+          <div class="prev-list">
+            <h5>Технологии для получения</h5>
+            <span>Нет</span>
+          </div>
+          <div class="next-list">
+            <h5>Технологии в которых используется</h5>
+            <button data-action="open" data-tech-id="3">Плавильная печь</button>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+
+    <!-- На будущее, если будет показываться вложенность в 2-3 по каждой стороне -->
+     <!-- Тк нет смысла в древе, если список показывает практически одно и то же, но без стоимости техи -->
+    <div class="related-tree">
+
+    </div>
+  </div>
+</body>
+
+</html>
